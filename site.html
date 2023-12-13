@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Códigos Nitros</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1a1a1a; /* Azul Escuro */
+      color: #000; /* Cor do texto */
+    }
+
+    #container {
+      text-align: center;
+      padding: 40px;
+      background-color: #e0e0e0;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #3498db; /* Azul Bebê */
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    #code {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    #generateBtn {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <h1>Gerador de Código Nitro</h1>
+  <p>                                                .</p>
+  <div id="code">Código: <span id="generatedCode"></span></div>
+  <button id="generateBtn" onclick="generateCode()">Gerar Código</button>
+
+  <script>
+    function generateCode() {
+      const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      const codeLength = 17;
+      let generatedCode = '';
+
+      for (let i = 0; i < codeLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        generatedCode += characters.charAt(randomIndex);
+      }
+
+      document.getElementById('generatedCode').innerText = generatedCode;
+    }
+  </script>
+</div>
+
+</body>
+</html>
